@@ -16,7 +16,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_12_07_210008) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "title"
-    t.boolean "status"
+    t.boolean "status", default: false
     t.string "description"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false

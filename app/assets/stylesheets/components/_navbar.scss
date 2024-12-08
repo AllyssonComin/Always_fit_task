@@ -1,12 +1,25 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.nav__logo {
+  width: 70px;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.nav__size {
+  height: 90px;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.nav__background {
+  background: hsla(355, 73%, 50%, 1);
+
+  background: linear-gradient(135deg, hsla(355, 73%, 50%, 1) 0%, hsla(348, 72%, 48%, 1) 0%, hsla(316, 68%, 41%, 1) 20%, hsla(348, 72%, 48%, 1) 40%, hsla(316, 68%, 41%, 1) 60%, hsla(334, 70%, 45%, 1) 80%, hsla(348, 72%, 48%, 1) 100%);
+
+  background: -moz-linear-gradient(135deg, hsla(355, 73%, 50%, 1) 0%, hsla(348, 72%, 48%, 1) 0%, hsla(316, 68%, 41%, 1) 20%, hsla(348, 72%, 48%, 1) 40%, hsla(316, 68%, 41%, 1) 60%, hsla(334, 70%, 45%, 1) 80%, hsla(348, 72%, 48%, 1) 100%);
+
+  background: -webkit-linear-gradient(135deg, hsla(355, 73%, 50%, 1) 0%, hsla(348, 72%, 48%, 1) 0%, hsla(316, 68%, 41%, 1) 20%, hsla(348, 72%, 48%, 1) 40%, hsla(316, 68%, 41%, 1) 60%, hsla(334, 70%, 45%, 1) 80%, hsla(348, 72%, 48%, 1) 100%);
+
+  filter: unquote("progid:DXImageTransform.Microsoft.Alpha(Opacity=50)");
+}
+
+.nav__link {
+  width: 10%;
+  display: flex;
+  justify-content: center;
 }
