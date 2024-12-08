@@ -16,12 +16,7 @@ pt-BR:
       pdi:
         cancellation_reasons: "Motivo do Cancelamento"
     errors:
-      models:
-        pdi:
-          attributes:
-            cancellation_reasons:
-              blank: "deve ser preenchido"
-        messages:
+      messages:
         record_invalid: 'A validação falhou: %{errors}'
         restrict_dependent_destroy:
           has_one: Não é possível excluir o registro pois existe um %{record} dependente
