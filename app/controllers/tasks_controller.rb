@@ -3,8 +3,13 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy, :mark_as_completed]
 
   def index
-    @tasks = Task.all
-    @my_tasks = current_user.tasks
+    @tasks = params[:filter] == 'my_tasks' ? current_user.tasks : Task.all
+    Task.all
+  end
+
+  def my_tasks
+    @tasks = current_user.tasks
+    render :index
   end
 
   def show
