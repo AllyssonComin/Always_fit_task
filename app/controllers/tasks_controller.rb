@@ -1,8 +1,10 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :set_task, only: [:show, :edit, :update, :destroy, :mark_as_completed]
 
   def index
     @tasks = Task.all
+    @my_tasks = current_user.tasks
   end
 
   def show
@@ -15,7 +17,6 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     @task.user = current_user
-    # @task.status
 
     if @task.save
       redirect_to @task, notice: 'Tarefa criada com sucesso.'
@@ -39,7 +40,13 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy
-    redirect_to tasks_path, status: :see_toher
+    redirect_to tasks_path
+  end
+
+  def mark_as_completed
+    @task.update(status: true)
+    redirect_to tasks_path, notice: 'Tarefa marcada como concluída'
+
   end
 
   private

@@ -1,9 +1,40 @@
-<%= form_with model: @task do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.label :status %>
-  <%= f.select_field :status %>
-  <%= f.submit %>
-<% end %>
+<div class="container mx-auto my-auto flex items-center justify-center">
+  <div class="box__form__task container mx-auto my-auto box__authentication ">
+    <div class="container mx-auto w-1/4 my-auto box__authentication__position__form">
+
+      <div class="box__title">
+        <p>Editar Tarefa</p>
+      </div>
+
+      <%= simple_form_for @task do |f| %>
+        <div class="flex flex-col gap-5">
+
+          <%= f.input :title,
+                      label: false,
+                      placeholder: "Título",
+                      require: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "name", class: "form__default" } %>
+          <%= f.input :description,
+                      label: false,
+                      placeholder: "Descrição",
+                      require: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "name", class: "form__default" } %>
+          <div class="flex flex-col-2 justify-between">
+
+            <%= f.label "Status" %>
+            <%= f.input :status, as: :select,
+                        collection: ([['Concluido', true], ['Pendente', false]]),
+                        label: false,
+                        input_html: { class: "form__default" } %>
+          </div>
+          <%= f.submit "Criar tarefa", class: "btn__enter"%>
+          <div class="flex justify-start mt-1">
+            <%= link_to "Voltar", :back %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
