@@ -1,0 +1,13 @@
+.link {
+  padding-left: 4%;
+  color: rgb(199, 33, 93);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.invalid-feedback {
+  font-size: 10px;
+  width: 250px;
+}

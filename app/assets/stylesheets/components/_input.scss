@@ -1,8 +1,8 @@
 
 .box__authentication {
-  height: 50vh;
+  height: 55vh;
   width: 45vh;
-  border-radius: 2%;
+  border-radius: 12px;
   background-color: white;
   border: 1px solid rgb(199, 34, 93);
   box-shadow: 8px 8px 20px rgba(199, 33, 93, 0.1);
@@ -29,4 +29,9 @@
   font-weight: bolder;
   font-size: 30px;
   margin-bottom: 10px;
+}
+
+.box__form__task {
+  width: 25%;
+  margin-top: 100px;
 }

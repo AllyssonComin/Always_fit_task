@@ -1,0 +1,34 @@
+.card__task {
+  margin-bottom: 30px;
+  height: 10%;
+  border-radius: 12px;
+  box-shadow: 8px 8px 20px rgba(199, 33, 93, 0.1);
+}
+
+.card__task__content {
+  padding: 4%;
+  color: rgb(199, 33, 93);
+  min-width: 150px;
+}
+.card__task__content__done {
+  padding: 4%;
+  color: rgb(199, 33, 93);
+  min-width: 150px;
+  background-color: rgba(199, 249, 204, 0.7);
+  border-radius: 12px;
+}
+
+.card__table {
+  margin-top: 100px;
+  width: 50%;
+}
+
+.card__task__header {
+  padding: 4%;
+  color: black;
+  font-weight: bolder;
+}
+
+.card__task__content__desc {
+  min-width: 120px;
+}

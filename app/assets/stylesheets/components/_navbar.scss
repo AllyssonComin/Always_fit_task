@@ -19,7 +19,15 @@
 }
 
 .nav__link {
-  width: 10%;
+  width: 15%;
   display: flex;
   justify-content: center;
+  font-weight: bold;
+  color: white;
+  font-size: 20px;
+
+  &:hover {
+    color: black;
+    transition: 0.5s;
+  }
 }

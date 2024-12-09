@@ -1,5 +1,48 @@
-<ul>
-  <% @tasks.each do |task| %>
-    <li><%= task.title %></li>
-  <% end %>
-</ul>
+<div class="container mx-auto my-auto flex items-center justify-center">
+  <div class="card__table">
+    <div class="card__task">
+      <div class="card__task__header grid grid-cols-8 gap-5">
+        <div class="col-span-2">
+          <p>Título</p>
+        </div>
+        <div class="col-span-4">
+          <p>Descrição</p>
+        </div>
+        <div class="col-span-1">
+          <p>Status</p>
+        </div>
+        <div class="col-span-1"></div>
+      </div>
+    </div>
+    <% @tasks.each do |task| %>
+      <div class="card__task ">
+        <div class="<%= task.status ? "card__task__content__done" : "card__task__content" %> grid grid-cols-8 gap-5">
+          <div class="col-span-2">
+            <%= link_to task_path(task), class:"link" do  %>
+              <%= task.title %>
+            <% end %>
+          </div>
+          <div class="col-span-4">
+            <%= task.description %>
+          </div>
+          <div class="col-span-1">
+            <%= task.status ? "Concluída" : "Pendente"%>
+          </div>
+          <div class="col-span-1 flex justify-between">
+            <% if current_user == task.user && task.status == false %>
+              <%= link_to edit_task_path(task), data: { turbo: false } do %>
+                <i class='fa-regular fa-pen-to-square'></i>
+              <% end %>
+              <%= button_to task_path(task), method: :delete, data: { confirm: "Are you sure?", turbo_confirm: "Você tem certeza?" } do %>
+                <i class="fa-solid fa-trash"></i>
+              <% end %>
+              <%= button_to mark_as_completed_task_path(task), method: :patch, class: '' do %>
+                <i class="fa-solid fa-check"></i>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
