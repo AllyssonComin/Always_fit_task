@@ -5,5 +5,8 @@ Rails.application.routes.draw do
     member do
       patch :mark_as_completed
     end
+    collection do
+      get :my_task
+    end
   end
 end
